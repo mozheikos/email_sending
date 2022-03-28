@@ -1,0 +1,15 @@
+import requests
+
+params = {
+    "to": "mozheiko.stanislav@yandex.ru,ctacec@gmail.com",
+    "subject": "subject_text",
+    "message": "new letter text",
+}
+
+with open("/home/stanislav/work/everdao/alembic.ini", 'rb') as f:
+
+    files = {
+        "file": f,
+    }
+
+    response = requests.post("http://127.0.0.1:9000/", data=params, files=files)
