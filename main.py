@@ -2,7 +2,7 @@ import smtplib
 import os
 import settings
 from bottle import run, post, request
-from handlers import ser_crontab_task, attach_file, get_logger, get_letter
+from handlers import set_crontab_task, attach_file, get_logger, get_letter
 
 logger = get_logger()
 
@@ -40,7 +40,7 @@ def send_email() -> None:
 
 if __name__ == "__main__":
 
-    status = ser_crontab_task()
+    status = set_crontab_task()
 
     if status["status"]:
         logger.info(status["message"])

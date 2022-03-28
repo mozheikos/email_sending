@@ -27,7 +27,7 @@ def get_logger() -> logging.Logger:
     return logger
 
 
-def ser_crontab_task() -> dict:
+def set_crontab_task() -> dict:
     cron = CronTab(user="stanislav")
 
     command = f"python3 {PATH}/archive_deleter.py"
